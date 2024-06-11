@@ -1,0 +1,26 @@
+LIBERAL:
+*Washington Post
+*Wired
+Vox
+LA Times
+Al Jazeera
+
+
+
+MODERATE:
+BBC
+ABC
+Stars and Stripes
+Forbes
+NPR
+*Wall Street Journal
+Reuters
+
+
+
+CONSERVATIVE:
+Fox News (web)
+Just the News
+
+
+* means there is a paywall
