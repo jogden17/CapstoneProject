@@ -1,15 +1,32 @@
+# gets the final redirect link from the google news link
+def finalLink(startLink):
+    import urllib.request
+    # open a connection to a URL using urllib
+    webUrl = urllib.request.urlopen(startLink)
+
+    # read the data from the URL and print it
+    data = str(webUrl.read())
+
+    # pull the final link from the html code
+    linkStart = data.rfind('http')
+    data = data[linkStart:]
+    linkEnd = data.find('"')
+    data = data[:linkEnd]
+
+    return data
+
 # pytrends found here https://github.com/GeneralMills/pytrends?tab=readme-ov-file#realtime-search-trends
 # This code pulls the realtime or past 24h search trends from Google Trends
 from pytrends.request import TrendReq
 pytrends = TrendReq(hl='en-US', tz=360)
 
-# realtime search trends for the United States in the "Top News" category
-#headlines = pytrends.realtime_trending_searches(pn='US')#, cat='h')
-#titles = headlines['title']
+# realtime search trends for the United States in the "Top News" category. More specific than 24 hour trends
+headlines = pytrends.realtime_trending_searches(pn='US')#, cat='h')
+titles = headlines['title']
 
-# This searches the trends of the last 24 hours
-headlines = pytrends.trending_searches(pn='united_states')
-titles = headlines[0]
+# This searches the trends of the last 24 hours. More broad than realtime
+#headlines = pytrends.trending_searches(pn='united_states')
+#titles = headlines[0]
 
 # gets keywords from trends used to search for articles
 keywords = []
@@ -44,10 +61,9 @@ for i in keywords:
 
     links = []
     for j in news:
-        links.append(j['url'])
+        links.append(finalLink(j['url']))
 
     linkHolder.append(links)
 
 linkDatabase['Links'] = linkHolder
 linkDatabase.to_csv('HeadlinesAndLinks.csv', index=False)
-
