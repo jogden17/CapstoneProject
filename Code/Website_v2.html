@@ -1,0 +1,85 @@
+<!-- final_website.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>IntelliNews</title>
+	
+	<style>
+	body{
+		margin: 0;
+		padding: 0;
+	}
+	
+	h1 {
+		color: white;
+	}
+	
+	header {
+		text-align: center;
+		margin: 0;
+		padding: 0;
+		height: 10;
+		background-color: #00008B;
+	}
+	
+	.footer {
+		text-align: center;
+		margin: 0;
+		padding: 0;
+		height: 10;
+		background-color: #00008B;
+	}
+	
+	.rectangle {
+		height: 300px;
+		width: 600px;
+		margin: auto;
+		background-color: #FFA500;
+		align: center;
+	}
+	
+	.text {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+	.container {
+		position: relative;
+		text-align: center;
+	}
+	
+	.img-container {
+		display: grid;
+		align-items: center;
+		grid-template-columns: 1fr 1fr 1fr;
+		column-gap: 5px;
+	}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>IntelliNews</h1>
+	</header>
+	
+	<div class="img-container">
+		<img src="https://cdn5.vectorstock.com/i/1000x1000/82/39/news-icon-newspaper-symbol-flat-vector-5518239.jpg" 
+	alt="news" style="width:50px;height:50px;">
+	<h2><center>Trending News Today</center></h2>
+	</div>
+	
+	
+	<div class="container">
+		<div class="rectangle"></div>
+		<div class="text">Info from the CSV goes here</div>
+	</div>
+	
+	<div class="footer">
+		<h1>IntelliNews</h1>
+	</div>
+</body>
+</html>
