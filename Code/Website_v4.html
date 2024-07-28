@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntelliNews</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://kit.fontawesome.com/207c7b2670.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.rawgit.com/derekeder/csv-to-html-table/v1.1.0/csv-to-html-table.min.js"></script>
+	
+	<style>
+        .trending-news {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        .trending-news h2 {
+            margin-top: 0;
+        }
+        .news-button {
+            display: block;
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #FFF;
+            border: none;
+            cursor: pointer;
+        }
+		
+		#demo:checked + .news-button{
+		
+		}
+		
+        .news-button:hover {
+            background-color: #0056b3;
+        }
+        .summary {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+        }
+    </style>
+	
+</head>
+<body onload="myFunction()">
+    <div class="container">
+        <header>
+            <section>
+                <img src="logo.png" alt="IntelliNews Logo" class="logo">
+            </section>
+            <section>
+                <h1>IntelliNews</h1>
+            </section>
+            <section>
+                <button class="btn">My Account</button>
+            </section>
+        </header>
+        <section class="trend-word">
+            <h2>Trending News Today</h2>
+        </section>
+        <main>
+            <div class="trending-news" id="trending-news">
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2024 IntelliNews. All rights reserved.</p>
+            <nav>
+                <a href="#">About</a> |
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Careers</a>
+            </nav>
+            <div class="social-media">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </footer>
+    </div>
+	<script>
+        $(document).ready(function() {
+            $.get('https://raw.githubusercontent.com/jogden17/CapstoneProject/main/Code/manual-HS.txt', function(data) {
+				var lines = data.split(/\r?\n/);
+				let count = 0;
+				
+				for(let i = 0; i < lines.length; i += 2){
+					let headline = lines[i];
+					let summary = lines[i + 1];	
+					var name = "news" + count;
+					
+					 $('#trending-news').append('<button class="news-button" id="' + 
+					 name + '" onclick="clickFunction(\'' + name + '\')">' + headline + 
+					 '</button><div class="summary" id="summary-' + name + 
+					 '" style="display:none;">' + summary + '</div>');			
+					count++;
+				}
+				
+            });
+        });
+		
+		function clickFunction(name){
+			var y = document.getElementById('summary-' + name);
+			if(y.style.display === "none"){
+				y.style.display = "block";
+			}else{
+				y.style.display = "none";
+			}
+		}
+    </script>
+</body>
+</html>
