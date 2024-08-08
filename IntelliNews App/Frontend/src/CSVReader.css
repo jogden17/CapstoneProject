@@ -1,0 +1,64 @@
+.my-masonry-grid {
+    display: flex;
+    width: auto;
+    padding: 50px;
+    padding-left: 7%;
+    padding-right: 7%;
+    gap: 40px;
+    background-color: rgb(242, 240, 229);
+}
+.my-masonry-grid_column {
+    background-clip: padding-box;
+
+}
+
+.grid-item {
+    border: 4px double rgb(64, 62, 60);
+    padding: 30px 50px 20px 50px;
+    margin-bottom: 50px;
+    width: auto;
+    height: min-content;
+    word-break: break-word;
+    background-color: rgb(255, 252, 240);
+    border-radius: 10px;
+}
+
+.headline {
+    color: rgb(40, 39, 38);
+    font-family: "Georgia", serif;
+    font-size: 1.7em;
+    font-weight: 600;
+    font-style: oblique;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.summary {
+    color: rgb(16, 15, 15);
+    font-family: "Georgia", serif;
+    font-weight: 500;
+    text-align: justify;
+}
+
+.links {
+    color: rgb(16, 15, 15);
+    font-family: "Georgia", serif;
+    font-weight: 600;
+    font-size: .7em;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.categoryName {
+    font-size: 4em;
+    font-weight: 500;
+    text-decoration-thickness: 3px;
+    color: rgb(40, 39, 38);
+    font-family: Georgia, serif;
+    text-align: center;
+    background-color: rgb(242, 240, 229);
+    padding-top: 30px;
+    margin: -10px 0 0 0;
+    height: 100px;
+}

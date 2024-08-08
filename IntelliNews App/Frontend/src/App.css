@@ -1,0 +1,69 @@
+@font-face {
+  font-family: "titleFont";
+  /* src: url("https://fonts.googleapis.com/css?family=Proza+Libre"); */
+  src: url("./assets/Chomsky.otf")
+}
+
+.logo{
+  width: 100px;
+  height: 100px;
+  padding-left: 1em;
+}
+
+.title {
+  font-family: titleFont, serif;
+  font-size: 5em;
+  color: rgb(242, 240, 229);
+  margin: 20px;
+  padding-left: .5em;
+  padding-right: 0.5em;
+  position: relative;
+  right: -420px;
+}
+
+.in-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: left;
+  background-color: rgb(32, 94, 166);
+  padding: 20px;
+}
+
+.selector {
+  height: 2em;
+  margin: 30px;
+  background-color: white;
+  color: black;
+}
+
+footer {
+  background-color: rgb(32, 94, 166);
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Georgia", serif;
+}
+
+footer nav {
+  margin: 10px 0;
+}
+
+footer nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+footer .social-media {
+  margin: 10px 0;
+}
+
+footer .social-media a {
+  margin: 0 10px;
+  color: white;
+  font-size: 1.5em;
+  text-decoration: none;
+}
